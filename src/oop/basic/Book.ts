@@ -1,4 +1,4 @@
-import Isbn from './Isbn';
+import Isbn from "./Isbn";
 
 /**
  * 本の基本インターフェース

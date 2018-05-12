@@ -30,16 +30,16 @@ export default class Isbn {
    * @link https://ja.wikipedia.org/wiki/ISO_639-1
    */
   extractLanguage(): string {
-    switch (this.isbn.split('-')[1]) {
-      case '0':
-      case '1':
-        return 'en';
-      case '2':
-        return 'fr';
-      case '4':
-        return 'ja';
+    switch (this.isbn.split("-")[1]) {
+      case "0":
+      case "1":
+        return "en";
+      case "2":
+        return "fr";
+      case "4":
+        return "ja";
       default:
-        throw new Error('言語コードが不明です。');
+        throw new Error("言語コードが不明です。");
     }
   }
 }
