@@ -1,4 +1,5 @@
 import Isbn from "./Isbn";
+import Price from "./Price";
 
 /**
  * 本の基本インターフェース
@@ -10,4 +11,11 @@ export interface Book {
    * @returns {Isbn}
    */
   isbn(): Isbn;
+
+  /**
+   * 価格を取得する
+   *
+   * @returns {Price}
+   */
+  price(): Price;
 }
