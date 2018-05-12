@@ -1,0 +1,33 @@
+{
+  "name": "design-pattern-tips",
+  "version": "1.0.0",
+  "description": "Design pattern sample Project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --config=jest.config.json",
+    "test:coverage": "jest --config=jest.config.json --collectCoverage=true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keitakn/design-pattern-tips.git"
+  },
+  "author": "keitakn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keitakn/design-pattern-tips/issues"
+  },
+  "homepage": "https://github.com/keitakn/design-pattern-tips#readme",
+  "devDependencies": {
+    "@types/express": "^4.11.1",
+    "@types/jest": "^22.2.3",
+    "jest": "^22.4.3",
+    "ts-jest": "^22.4.6",
+    "ts-loader": "^4.3.0",
+    "ts-node": "^6.0.3",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
