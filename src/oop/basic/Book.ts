@@ -1,4 +1,4 @@
-import Isbn from "./Isbn";
+import Isbn from './Isbn';
 
 /**
  * 本の基本インターフェース
@@ -9,5 +9,5 @@ export interface Book {
    *
    * @returns {Isbn}
    */
-  isbn() : Isbn;
+  isbn(): Isbn;
 }

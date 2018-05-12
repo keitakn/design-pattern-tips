@@ -4,7 +4,6 @@ import Isbn from '../../../../src/oop/basic/Isbn';
  * ISBNクラスのテスト
  */
 describe('Isbn', () => {
-
   /**
    * 言語コードを取り出せる事を担保する
    */
