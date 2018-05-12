@@ -1,5 +1,7 @@
 /**
  * ISBNクラス
+ *
+ * @link https://ja.wikipedia.org/wiki/ISBN
  */
 export default class Isbn {
 
