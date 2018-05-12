@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --config=jest.config.json",
     "test:coverage": "jest --config=jest.config.json --collectCoverage=true",
-    "lint": "tslint --project tsconfig.json --config tslint.json 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
+    "tslint": "tslint --project tsconfig.json --config tslint.json 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
+    "tslint:check": "tslint-config-prettier-check ./tslint.json",
     "format": "tslint --project tsconfig.json --config tslint.json --fix 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'"
   },
   "repository": {
