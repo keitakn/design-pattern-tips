@@ -2,7 +2,7 @@ import Isbn from "./Isbn";
 import Price from "./Price";
 
 /**
- * 本の基本インターフェース
+ * 書籍の基本インターフェース
  */
 export interface Book {
   /**
