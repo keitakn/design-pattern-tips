@@ -43,6 +43,6 @@ export default class Price {
   calculateIncludingTaxPrice(): number {
     // taxRateを1.08のように設定すると誤差が出るので108のように渡す事
     // （参考）https://qiita.com/jkr_2255/items/0ca7bc536d930f83a901
-    return this.excludingTaxPrice * this.taxRate / 100;
+    return Math.round(this.excludingTaxPrice * this.taxRate / 100);
   }
 }
