@@ -1,3 +1,5 @@
+import UndefinedLanguageError from "./UndefinedLanguageError";
+
 /**
  * ISBNクラス
  *
@@ -39,7 +41,7 @@ export default class Isbn {
       case "4":
         return "ja";
       default:
-        throw new Error("言語コードが不明です。");
+        throw new UndefinedLanguageError();
     }
   }
 }
