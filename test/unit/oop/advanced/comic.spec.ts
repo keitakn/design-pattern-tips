@@ -1,8 +1,9 @@
-import AuthorFactory from "src/oop/advanced/factory/AuthorFactory";
-import IsbnFactory from "src/oop/advanced/factory/IsbnFactory";
-import TitleFactory from "src/oop/advanced/factory/TitleFactory";
-import PriceFactory from "src/oop/advanced/factory/PriceFactory";
-import { Comic } from "src/oop/advanced/Comic";
+import AuthorFactory from "../../../../src/oop/advanced/factory/AuthorFactory";
+import IsbnFactory from "../../../../src/oop/advanced/factory/IsbnFactory";
+import TitleFactory from "../../../../src/oop/advanced/factory/TitleFactory";
+import PriceFactory from "../../../../src/oop/advanced/factory/PriceFactory";
+import { Comic } from "../../../../src/oop/advanced/Comic";
+import ComicFactory from "../../../../src/oop/advanced/factory/ComicFactory";
 
 /**
  * 漫画クラスのテスト
@@ -12,21 +13,14 @@ describe("Comic.Entity", () => {
    * 英語の漫画オブジェクトが作成出来る事を確認する
    */
   it("should be able to create English Comic Object", () => {
-    const isbn = IsbnFactory.create({ isbn: "978-1-40-127734-5" });
-    const title = TitleFactory.create({ mainTitle: "Batman", subTitle: "1" });
-    const price = PriceFactory.create({ excludingTaxPrice: 100, taxRate: 110 });
-    const author = AuthorFactory.create({
-      givenName: "Bob",
-      familyName: "Kane"
-    });
+    const createParams = {
+      isbnCreateParams: { isbn: "978-1-40-127734-5" },
+      titleCreateParams: { mainTitle: "Batman", subTitle: "1" },
+      priceCreateParams: { excludingTaxPrice: 100, taxRate: 110 },
+      authorCreateParams: { givenName: "Bob", familyName: "Kane" }
+    };
 
-    const comicBuilder = new Comic.Builder();
-    comicBuilder.isbn = isbn;
-    comicBuilder.title = title;
-    comicBuilder.author = author;
-    comicBuilder.price = price;
-
-    const comic = comicBuilder.build();
+    const comic = ComicFactory.create(createParams);
 
     expect(comic.isbn.extractLanguage()).toBe("en");
     expect(comic.title.fullTitle()).toBe("Batman 1");
