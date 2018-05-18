@@ -91,4 +91,37 @@ describe("Comic.Entity", () => {
     expect(comic.price.calculateIncludingTaxPrice()).toBe(500);
     expect(comic.extractAuthorFullName()).toBe("末次 由紀");
   });
+
+  /**
+   * 言語が未定義なので"UndefinedLanguageError"がthrowされる事を確認する
+   */
+  it("should be thrown UndefinedLanguageError. Because the Language is undefined", () => {
+    const isbnGermany = IsbnFactory.create({ isbn: "978-3-10-999999-2" });
+    const title = TitleFactory.create({
+      mainTitle: "ちはやふる",
+      subTitle: "第1巻"
+    });
+    const price = PriceFactory.create({ excludingTaxPrice: 463, taxRate: 108 });
+    const author = AuthorFactory.create({
+      givenName: "由紀",
+      familyName: "末次"
+    });
+
+    const comicBuilder = new Comic.Builder();
+    comicBuilder.isbn = isbnGermany;
+    comicBuilder.title = title;
+    comicBuilder.author = author;
+    comicBuilder.price = price;
+
+    const comic = comicBuilder.build();
+
+    try {
+      const language = comic.isbn.extractLanguage();
+      // catchブロックに入っていない時点でこのテストは意図した通りに動いていないのでテストを失敗させる
+      fail(language);
+    } catch (error) {
+      // ドイツ語は未定義なのでエラーになるハズ
+      expect(error.name).toBe("UndefinedLanguageError");
+    }
+  });
 });
