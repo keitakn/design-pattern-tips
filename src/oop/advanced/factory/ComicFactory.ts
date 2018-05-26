@@ -1,12 +1,8 @@
-import { IsbnCreateParams } from "./IsbnFactory";
-import { TitleCreateParams } from "./TitleFactory";
-import { PriceCreateParams } from "./PriceFactory";
-import { AuthorCreateParams } from "./AuthorFactory";
-import PriceFactory from "./PriceFactory";
-import IsbnFactory from "./IsbnFactory";
-import TitleFactory from "./TitleFactory";
+import IsbnFactory, { IsbnCreateParams } from "./IsbnFactory";
+import TitleFactory, { TitleCreateParams } from "./TitleFactory";
+import PriceFactory, { PriceCreateParams } from "./PriceFactory";
+import AuthorFactory, { AuthorCreateParams } from "./AuthorFactory";
 import { Comic } from "../Comic";
-import AuthorFactory from "./AuthorFactory";
 
 /**
  * ComicFactory.create IF
