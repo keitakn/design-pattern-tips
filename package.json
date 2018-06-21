@@ -22,6 +22,7 @@
   "homepage": "https://github.com/keitakn/design-pattern-tips#readme",
   "devDependencies": {
     "@types/jest": "^22.2.3",
+    "@types/ramda": "^0.25.33",
     "jest": "^23.0.0",
     "prettier": "^1.12.1",
     "ts-jest": "^22.4.6",
@@ -32,5 +33,8 @@
     "tslint-plugin-prettier": "^1.3.0",
     "typescript": "^2.8.3"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "ramda": "^0.25.0"
+  }
 }
